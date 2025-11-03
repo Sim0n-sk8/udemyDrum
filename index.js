@@ -64,8 +64,3 @@ function makesound(key){
     default:console.log(this)
   }
 }
-
-
-
-
-   
