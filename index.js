@@ -5,8 +5,26 @@ for (var i = 0; i <nod; i++){
 document.querySelectorAll(".drum")[i].addEventListener("click", function () {
     
     var bih = this.innerHTML;
+    makesound(bih)
 
-  switch (bih){
+  
+
+
+});
+
+
+}
+
+addEventListener("keydown", function (e) {
+
+    makesound(e.key);
+
+});
+
+
+function makesound(key){
+
+    switch (key){
     case "w":
      var tom1 = new Audio("sounds/tom-1.mp3");
     tom1.play();
@@ -28,33 +46,24 @@ document.querySelectorAll(".drum")[i].addEventListener("click", function () {
     break;
 
     case "j":
-     var audio = new Audio("sounds/snare.mp3");
-    audio.play();
+     var snare = new Audio("sounds/snare.mp3");
+    snare.play();
     break;
 
     case "k":
-     var audio = new Audio("sounds/crash.mp3");
-    audio.play();
+     var crash= new Audio("sounds/crash.mp3");
+    crash.play();
     break;
 
     case "l":
-     var audio = new Audio("sounds/kick-bass.mp3");
-    audio.play();
+     var kick = new Audio("sounds/kick-bass.mp3");
+    kick.play();
+    
     break;
 
-
-
-
-
-    default:
+    default:console.log(this)
   }
-
-
-});
-
-
 }
-
 
 
 
