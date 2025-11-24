@@ -7,7 +7,7 @@ document.querySelectorAll(".drum")[i].addEventListener("click", function () {
     var bih = this.innerHTML;
     makesound(bih)
 
-  
+    buttonAnimation(bih);
 
 
 });
@@ -18,6 +18,7 @@ document.querySelectorAll(".drum")[i].addEventListener("click", function () {
 addEventListener("keydown", function (e) {
 
     makesound(e.key);
+    buttonAnimation(e.key);
 
 });
 
@@ -63,4 +64,14 @@ function makesound(key){
 
     default:console.log(this)
   }
+}
+
+
+function buttonAnimation(currentKey){ 
+   var activeButton = document.querySelector("." + currentKey);
+    activeButton.classList.add("pressed");
+
+    setTimeout(function(){
+        activeButton.classList.remove("pressed");
+    },100);
 }
